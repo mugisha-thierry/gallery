@@ -7,9 +7,6 @@ class Location(models.Model):
     def __str__(self):
         return self.name    
 
-    def save_location(self):
-        self.save()
-
     @classmethod
     def get_locations(cls):
         locations = Location.objects.all()
