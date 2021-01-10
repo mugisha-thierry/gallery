@@ -1,6 +1,6 @@
 # My_Gallery
 ---
-This app allows people to view different pictures posted by admining basing on the places they were captured from
+This app allows people to view different pictures posted by admin basing on the places they were captured from
 ---
 ![]()
 ## Author
