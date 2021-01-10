@@ -13,5 +13,6 @@ def first(request):
 
 def image_location(request, location):
     images = Image.filter_by_location(location)
-    context = {'images':images}
+    locations = Location.get_locations()
+    context = {'images':images,'locations': locations}
     return render(request,'location.html',context)
