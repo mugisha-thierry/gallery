@@ -16,3 +16,16 @@ def image_location(request, location):
     locations = Location.get_locations()
     context = {'images':images,'locations': locations}
     return render(request,'location.html',context)
+
+def search_image(request):
+    locations = Location.get_locations()
+    if 'searchimage' in request.GET and request.GET["searchimage"]:
+        category = request.GET.get("searchimage")
+        images = Image.search_by_category(category)
+        context = {'images':images,'locations': locations}
+        return render(request,'search.html',context)
+    else:
+        message = "You haven't searched for any term"
+        context = {'locations': locations,'message':message}
+        return render(request,'search.html',context)
+   
